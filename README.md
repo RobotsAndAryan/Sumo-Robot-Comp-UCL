@@ -1,4 +1,4 @@
-# UCL Sumo Robot Competition — Participant Manual
+# Sumo Robot Competition — Participant Manual
 
 This repository contains the wiring guide, component datasheets, and starter code for the UCL Sumo Robot Workshop.
 
