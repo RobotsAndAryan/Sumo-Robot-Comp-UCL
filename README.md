@@ -6,7 +6,7 @@ This repository contains the hardware documentation, wiring connections, and sta
 
 1. **Select a Chassis:** Pick one of the available CAD chassis designs.
 2. **Assemble:** Mount the motors, wheels, sensors, and Arduino Uno onto the chassis.
-3. **Wire:** Connect all components to the Arduino using the pinout tables and datasheets below.
+3. **Wire:** Connect all components to the Arduino via the breadboard using the pinout tables and datasheets below.
 4. **Program:** Install the required libraries, open [`starter_code/starter_code.ino`](starter_code/starter_code.ino), and write your robot's control logic.
 
 ---
@@ -16,6 +16,7 @@ This repository contains the hardware documentation, wiring connections, and sta
 | Component | Qty | Voltage | Datasheet / Documentation |
 | :--- | :---: | :---: | :--- |
 | **Arduino Uno R3** | 1 | 5V logic (7–12V VIN) | [Arduino Uno R3 Datasheet](https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf) |
+| **Solderless Breadboard** | 1 | — | [Breadboard Guide](https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard/all) / [Datasheet (PDF)](https://www.busboard.com/pdfs/BPS-MAR-BB400-001.pdf) |
 | **DRV8833 Motor Driver** | 1 | 2.7V – 10.8V (`VM`) | [TI DRV8833 Datasheet](https://www.ti.com/lit/ds/symlink/drv8833.pdf) |
 | **N20 DC Gearmotors** | 2 | 6V | [N20 Gearmotor Specs](https://www.pololu.com/category/60/micro-metal-gearmotors) |
 | **Pololu 2-Ch QTR Sensor** | 2 | 5V | [Pololu QTR User Guide](https://www.pololu.com/docs/0J19) |
@@ -24,9 +25,10 @@ This repository contains the hardware documentation, wiring connections, and sta
 
 ---
 
-## Arduino Pinout & Wiring
+## Breadboard & Wiring
 
-Ensure the battery `-`, DRV8833 `GND`, and Arduino `GND` share a common ground. Power the DRV8833 `VM` pin from the battery pack, not the Arduino `5V` pin.
+* **Breadboard Layout:** The 5 holes in each numbered terminal row (`A–E` and `F–J`) are connected together internally, separated by the center gap. Place dual-row modules (like the DRV8833) straddling the center gap, and single-row modules (like the MPU-6050) across separate numbered rows so pins do not short together.
+* **Power & Ground:** Connect Arduino `5V` and `GND` to the breadboard `+` and `-` power rails to share power across your sensors. Ensure the battery `-`, DRV8833 `GND`, and Arduino `GND` share a common ground. Power the DRV8833 `VM` pin from the battery pack, not the Arduino `5V` pin.
 
 ### DRV8833 Motor Driver
 | DRV8833 Pin | Connects To |
